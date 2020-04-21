@@ -1,0 +1,36 @@
+{
+	"systemName": "ICARUS debug installation",
+	"systemType": "ICARUS debug platform",
+	"systemModel": "ICARUS test hardware",
+
+	"heartbeat": {
+		"enabled": true
+	},
+
+	"loggingOptions": {
+		"stderrVerbosity": 0,
+		"colorLogToStderr": true,
+		"flushIntervalMs": 25,
+		"preambleHeader": true,
+		"preamble": true,
+		"preambleDate": true,
+		"preambleTime": true,
+		"preambleUptime": false,
+		"preambleThread": true,
+		"preambleFile": false,
+		"preambleVerbose": true,
+		"preamblePipe": true,
+
+		"fileVerbosity": 0,
+		"filePath": ""
+	},
+
+	"legacyUsbJoysticks": [
+	],
+
+	"usbSpiBridges": [
+	],
+
+	"gui": {
+	}
+}

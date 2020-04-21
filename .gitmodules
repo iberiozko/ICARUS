@@ -1,0 +1,8 @@
+[submodule "loguru"]
+	path = loguru
+	url = https://github.com/emilk/loguru.git
+	branch = master
+[submodule "rapidjson"]
+	path = rapidjson
+	url = https://github.com/Tencent/rapidjson.git
+	branch = master
