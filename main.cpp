@@ -1,14 +1,13 @@
 #include "CONFIG.h"
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <unistd.h>
 #include "loguru/loguru.hpp"
-
 #include "options.h"
 #include "Config/configuration.h"
 #include "supervisor.h"
+#include "GUI/guiworker.h"
 
-// TEMP
-#include <unistd.h>
 
 int main(int argc, char *argv[]) {
     // Первоначальная настройка
@@ -27,25 +26,17 @@ int main(int argc, char *argv[]) {
     ICARUS::Supervisor supervisor(config);
     supervisor.start();
 
+    // Запускаем графику, если она нужна
+    if (config.gui.enabled) {
+        ICARUS::GUIWorker guiWorker(config, config.gui);
+        guiWorker.Run(argc, argv);
+    }
+    else {
+        LOG_F(INFO, "GUI is not enabled, entering idle loop...");
+        loguru::set_thread_name("console");
+        while (true) { sleep(1); } // TODO Смотреть на супервизор, что ли?
+    }
 
-    // TEMP
-    while (true) { sleep(10); LOG_F(INFO, "main tick"); }
-#ifdef FALSE
-    qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
-
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-
-    QGuiApplication app(argc, argv);
-
-    QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("qrc:/main.qml"));
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl)
-            QCoreApplication::exit(-1);
-    }, Qt::QueuedConnection);
-    engine.load(url);
-
-    return app.exec();
-#endif
+    LOG_F(INFO, "Application is terminating, finalizing...");
+    // TODO
 }

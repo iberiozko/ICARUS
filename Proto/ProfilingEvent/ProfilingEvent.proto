@@ -1,0 +1,24 @@
+syntax = "proto2";
+package Proto;
+
+message TickCounter {
+	required string key = 1;
+	required uint64 minute = 2;
+	required uint64 hour = 3;
+	required uint64 day = 4;
+	required uint64 total = 5;
+}
+
+message AverageCounter {
+	required string key = 1;
+	required double minute = 2;
+	required double hour = 3;
+	required double day = 4;
+	required double total = 5;
+}
+
+message ProfilingEvent {
+	required string source = 1;
+	repeated TickCounter ticks = 2;
+	repeated AverageCounter averages = 3;
+}

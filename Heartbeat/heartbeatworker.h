@@ -1,16 +1,21 @@
 #ifndef HEARTBEATWORKER_H
 #define HEARTBEATWORKER_H
 #include "../CONFIG.h"
+#include "../Config/configuration.h"
 #include "../worker.h"
 namespace ICARUS {
 
-class HeartbeatWorker : protected Worker {
+class HeartbeatWorker : public Worker {
+public:
+    HeartbeatWorker(Config::Configuration &globalConfig, Config::Heartbeat &config) : Worker(globalConfig, config.workerCfg), config(config) {}
 
 protected:
-    bool Initialize();
-    bool Finalize();
-    bool Process();
+    bool Initialize() override;
+    bool Finalize() override;
+    bool Process() override;
 
+private:
+    Config::Heartbeat &config;
 };
 
 } // namespace ICARUS

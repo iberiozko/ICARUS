@@ -1,0 +1,11 @@
+syntax = "proto2";
+package Proto;
+
+message ConsoleSignal {
+	required string signal = 1;
+	optional double value = 2;
+}
+
+message ConsoleEvent {
+	repeated ConsoleSignal event = 1;
+}

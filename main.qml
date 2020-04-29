@@ -9,32 +9,14 @@ Window {
     height: 480
     title: qsTr("Hello World")
 
-    InputPanel {
-        id: inputPanel
-        z: 99
-        x: 0
-        y: window.height
-        width: window.width
+    Text {
+        anchors.centerIn: parent
+        color: 'red'
+        text: 'Hello my world'
+    }
 
-        states: State {
-            name: "visible"
-            when: inputPanel.active
-            PropertyChanges {
-                target: inputPanel
-                y: window.height - inputPanel.height
-            }
-        }
-        transitions: Transition {
-            from: ""
-            to: "visible"
-            reversible: true
-            ParallelAnimation {
-                NumberAnimation {
-                    properties: "y"
-                    duration: 250
-                    easing.type: Easing.InOutQuad
-                }
-            }
-        }
+    MouseArea {
+        anchors.fill: parent
+        onClicked: logger.warning("QML HELO %s = %d", "dsgfsdgdsgs", 111)
     }
 }

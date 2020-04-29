@@ -7,7 +7,7 @@ namespace Config {
 
 bool LoggingOptions::parseJsonValue(rapidjson::Value doc) {
     bool result = true;
-    result = validateInt(stderrVerbosity, doc, "loggingOptions", "stderrVerbosity", false, -2, 9) && result;
+    result = validateInt(stderrVerbosity, doc, "loggingOptions.", "stderrVerbosity", false, -2, 9) && result;
     result = validateBool(colorLogToStderr, doc, "loggingOptions.", "colorLogToStderr", false) && result;
     result = validateInt(flushIntervalMs, doc, "loggingOptions", "flushIntervalMs", false, 0, 1000) && result;
     result = validateBool(preambleHeader, doc, "loggingOptions.", "preambleHeader", false) && result;

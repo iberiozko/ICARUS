@@ -1,15 +1,21 @@
 #ifndef HOUSEKEEPERWORKER_H
 #define HOUSEKEEPERWORKER_H
 #include "../CONFIG.h"
+#include "../Config/configuration.h"
 #include "../worker.h"
 namespace ICARUS {
 
-class HousekeeperWorker : protected Worker {
+class HousekeeperWorker : public Worker {
+public:
+    HousekeeperWorker(Config::Configuration &globalConfig, Config::Housekeeper &config) : Worker(globalConfig, config.workerCfg), config(config) {}
 
 protected:
-    bool Initialize();
-    bool Finalize();
-    bool Process();
+    bool Initialize() override;
+    bool Finalize() override;
+    bool Process() override;
+
+private:
+    Config::Housekeeper config;
 };
 
 } // namespace ICARUS

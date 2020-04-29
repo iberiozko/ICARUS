@@ -7,13 +7,8 @@ namespace Config {
 
 bool Heartbeat::parseJsonValue(rapidjson::Value doc) {
     bool result = true;
-    result = validateBool(enabled, doc, "housekeeper.", "hz", false) && result;
-    if (doc.HasMember("workerCfg")) {
-        if (doc["workerCfg"].IsObject()) {
-            result = workerCfg.parseJsonValue(doc["workerCfg"].GetObject()) && result;
-        }
-        else { LOG_F(ERROR, "Configuration: workerCfg section should be an object!"); result = false; }
-    }
+    result = validateBool(enabled, doc, "heartbeat.", "enabled", false) && result;
+    if (checkObject(doc, "heartbeat.", "workerCfg", false)) { result = workerCfg.parseJsonValue(doc["workerCfg"].GetObject()) && result; }
     return result;
 }
 

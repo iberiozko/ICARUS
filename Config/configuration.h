@@ -9,6 +9,7 @@
 #include "loggingoptions.h"
 #include "heartbeat.h"
 #include "housekeeper.h"
+#include "gui.h"
 #include "workercfg.h"
 namespace ICARUS {
 namespace Config {
@@ -27,6 +28,7 @@ public:
     LoggingOptions loggingOptions;
     Heartbeat heartbeat;
     Housekeeper housekeeper;
+    GUI gui;
 
 private:
     std::string configFilename = "icarus.json";

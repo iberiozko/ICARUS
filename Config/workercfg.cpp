@@ -11,7 +11,7 @@ bool WorkerCfg::parseJsonValue(rapidjson::Value doc) {
     result = validateInt(maxFinalizeRetries, doc, "workerCfg.", "maxFinalizeRetries", false, 0) && result;
     result = validateInt(maxProcessRetries, doc, "workerCfg.", "maxProcessRetries", false, 0) && result;
     result = validateBool(testMode, doc, "workerCfg.", "testMode", false) && result;
-    result = validateString(friendlyName, doc, "workerCfg.", "friendlyName", false) && result;
+    result = validateString(name, doc, "workerCfg.", "name", false) && result;
     return result;
 }
 

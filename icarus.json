@@ -3,9 +3,9 @@
 	"systemType": "ICARUS debug platform",
 	"systemModel": "ICARUS test hardware",
 
-	"heartbeat": {
-		"enabled": true
-	},
+	"heartbeat": { "enabled": true },
+
+	"housekeeper": { "enabled": false },
 
 	"loggingOptions": {
 		"stderrVerbosity": 0,
@@ -32,5 +32,7 @@
 	],
 
 	"gui": {
+		"enabled": true,
+		"workerCfg": { "hz": 10.0 }
 	}
 }

@@ -16,4 +16,9 @@ const double SUPERVISOR_SLEEPTIME_MKS = 100000;
 // Сколько символов показывать в контексте ошибки разбора JSON
 const int JSON_ERROR_CONTEXT_LENGTH = 50;
 
+// Интервал профилирования, и сброса накопленной статистики, в секундах
+#define PROFILING_ENABLED
+const double PROFILING_INTERVAL = 60.0;
+const double PROFILING_FLUSH_INTERVAL = 10.0;
+
 #endif // CONFIG_H

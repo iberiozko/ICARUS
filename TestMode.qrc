@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/testmode">
+        <file>QML/TestMode/testmode.qml</file>
+    </qresource>
+</RCC>

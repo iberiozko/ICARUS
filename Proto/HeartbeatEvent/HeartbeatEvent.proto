@@ -1,0 +1,18 @@
+syntax = "proto2";
+package Proto;
+
+message Hardware {
+	required string sysname = 1;
+	required string nodename = 2;
+	required string release = 3;
+	required string version = 4;
+	required string machine = 5;
+}
+
+message HeartbeatEvent {
+	required string guid = 1;
+	required string systemName = 2;
+	required string systemType = 3;
+	required string systemModel = 4;
+	required Hardware hardware = 5;
+}

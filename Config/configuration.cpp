@@ -42,17 +42,11 @@ bool Configuration::parseJsonValue(rapidjson::Value doc) {
     result = validateString(systemModel, doc, "", "systemModel", false) && result;
     result = validateBool(testMode, doc, "", "testMode", false) && result;
 
-    // loggingOptions
-    if (doc.HasMember("loggingOptions")) {
-        if (doc["loggingOptions"].IsObject()) { result = loggingOptions.parseJsonValue(doc["loggingOptions"].GetObject()) && result; }
-        else { LOG_F(ERROR, "loggingOptions section must be an object!"); result = false; }
-    }
-
-    // heartbeat
-    if (doc.HasMember("heartbeat")) {
-        if (doc["heartbeat"].IsObject()) { result = heartbeat.parseJsonValue(doc["heartbeat"].GetObject()) && result; }
-        else { LOG_F(ERROR, "heartbeat: section must be an object!"); result = false; }
-    }
+    // Конфигурационные секции
+    if (checkObject(doc, "", "loggingOptions", false)) { result = loggingOptions.parseJsonValue(doc["loggingOptions"].GetObject()) && result; }
+    if (checkObject(doc, "", "heartbeat", false)) { result = heartbeat.parseJsonValue(doc["heartbeat"].GetObject()) && result; }
+    if (checkObject(doc, "", "housekeeper", false)) {result = housekeeper.parseJsonValue(doc["housekeeper"].GetObject()) && result; }
+    if (checkObject(doc, "", "gui", false)) {result = gui.parseJsonValue(doc["gui"].GetObject()) && result; }
 
     // Разбираемся с GUID-ом
     if (guid.empty()) {

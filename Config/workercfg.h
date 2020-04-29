@@ -11,13 +11,13 @@ namespace Config {
 
 class WorkerCfg : public ConfigurationSection {
 public:
-    WorkerCfg(double hz, uint32_t maxInitializeRetries, uint32_t maxFinalizeRetries, uint32_t maxProcessRetries, bool testMode, const std::string &friendlyName) :
+    WorkerCfg(double hz, uint32_t maxInitializeRetries, uint32_t maxFinalizeRetries, uint32_t maxProcessRetries, bool testMode, const std::string &name) :
         hz(hz),
         maxInitializeRetries(maxInitializeRetries),
         maxFinalizeRetries(maxFinalizeRetries),
         maxProcessRetries(maxProcessRetries),
         testMode(testMode),
-        friendlyName(friendlyName)
+        name(name)
     {}
 
     double hz;
@@ -25,7 +25,7 @@ public:
     int maxFinalizeRetries;
     int maxProcessRetries;
     bool testMode;
-    std::string friendlyName;
+    std::string name;
 
     bool parseJsonValue(rapidjson::Value doc);
 };
