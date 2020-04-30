@@ -9,11 +9,28 @@
 namespace ICARUS {
 namespace Config {
 
+class GUIScreen : public ConfigurationSection {
+public:
+    bool enabled = false;
+    bool fullScreen = false;
+    int screenId = 0;
+    int x = 0;
+    int y = 0;
+    int width = 640;
+    int height = 480;
+    std::string bootstrap = "qrc:/Testmode/Testmode.qml";
+    std::string application = "";
+    bool parseJsonValue(rapidjson::Value doc);
+    QVariant toVariant();
+};
+
 class GUI : public ConfigurationSection {
 public:
     bool enabled = false;
     WorkerCfg workerCfg = { 100.0, 0, 0, 0, true, "gui" };
+    std::list<GUIScreen> screens;
     bool parseJsonValue(rapidjson::Value doc);
+    QVariant toVariant();
 };
 
 } // namespace Config

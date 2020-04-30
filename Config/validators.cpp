@@ -67,5 +67,20 @@ bool checkObject(const rapidjson::Value &value, const std::string &context, cons
     }
 }
 
+bool checkList(const rapidjson::Value &value, const std::string &context, const std::string &key, bool required, int fixedSize) {
+    if (!value.HasMember(key.c_str())) {
+        if (required) { LOG_F(ERROR, "Configuration: %s%s required, but missing!", context.c_str(), key.c_str()); }
+        return false;
+    }
+    else {
+        if (!value[key.c_str()].IsArray()) { LOG_F(ERROR, "Configuration: %s%s should be of type: list", context.c_str(), key.c_str()); return false; }
+        if (fixedSize >= 0 && !((int)value[key.c_str()].Size() != fixedSize)) {
+            LOG_F(ERROR, "Configuration: %s%s must contain exactly %d elements", context.c_str(), key.c_str(), fixedSize);
+            return false;
+        }
+        return true;
+    }
+}
+
 } // namespace Config
 } // namespace ICARUS

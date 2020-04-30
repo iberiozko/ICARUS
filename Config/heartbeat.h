@@ -13,6 +13,7 @@ public:
     bool enabled = false;
     WorkerCfg workerCfg = { 1.0, 0, 0, 0, true, "heartbeat" };
     bool parseJsonValue(rapidjson::Value doc);
+    QVariant toVariant();
 };
 
 } // namespace Config

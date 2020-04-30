@@ -16,6 +16,7 @@ public:
     std::string machine = "unknown";
 
     void collectHardware();
+    QVariant toVariant();
 };
 
 } // namespace Config

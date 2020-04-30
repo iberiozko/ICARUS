@@ -33,6 +33,10 @@
 
 	"gui": {
 		"enabled": true,
-		"workerCfg": { "hz": 10.0 }
+		"workerCfg": { "hz": 10.0 },
+		"screens": [
+			{ "enabled": true, "x": 10, "y": 10, "width": 800, "height": 600 },
+			{ "enabled": true, "x": 100, "y": 100, "width": 800, "height": 600, "fullScreen": true, "screenId": 1 }
+		]
 	}
 }

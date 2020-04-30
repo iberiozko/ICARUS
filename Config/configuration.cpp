@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include "loguru/loguru.hpp"
 #include "validators.h"
+#include "configurationsection.h"
 #include "configuration.h"
 namespace ICARUS {
 namespace Config {
@@ -59,6 +60,21 @@ bool Configuration::parseJsonValue(rapidjson::Value doc) {
     hardware.collectHardware();
 
     return result; // Возвращаем, что у нас получилось
+}
+
+QVariant Configuration::toVariant() {
+    QVariantMap map;
+    map.insert("guid", QString(guid.c_str()));
+    map.insert("systemName", QString(systemName.c_str()));
+    map.insert("systemType", QString(systemType.c_str()));
+    map.insert("systemModel", QString(systemModel.c_str()));
+    map.insert("testMode", testMode);
+    map.insert("hardware", hardware.toVariant());
+    map.insert("loggingOptions", loggingOptions.toVariant());
+    map.insert("heartbeat", heartbeat.toVariant());
+    map.insert("housekeeper", housekeeper.toVariant());
+    map.insert("gui", gui.toVariant());
+    return QVariant(map);
 }
 
 } // namespace Config

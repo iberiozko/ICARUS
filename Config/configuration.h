@@ -10,6 +10,7 @@
 #include "heartbeat.h"
 #include "housekeeper.h"
 #include "gui.h"
+#include "profiling.h"
 #include "workercfg.h"
 namespace ICARUS {
 namespace Config {
@@ -18,6 +19,7 @@ class Configuration : public ConfigurationSection {
 public:
     Configuration(const std::string configFilename);
     bool parseJsonValue(rapidjson::Value doc);
+    QVariant toVariant();
 
     std::string guid;
     std::string systemName = "ICARUS debug system";
@@ -28,6 +30,7 @@ public:
     LoggingOptions loggingOptions;
     Heartbeat heartbeat;
     Housekeeper housekeeper;
+    Profiling profiling;
     GUI gui;
 
 private:

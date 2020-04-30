@@ -1,3 +1,4 @@
+#pragma once
 #ifndef HEARTBEATWORKER_H
 #define HEARTBEATWORKER_H
 #include "../CONFIG.h"

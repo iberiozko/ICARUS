@@ -6,6 +6,7 @@
 #include <atomic>
 #include "Config/configuration.h"
 #include "Profiler/profiler.h"
+#include "Profiler/profilingworker.h"
 #include "Housekeeper/housekeeperworker.h"
 #include "Heartbeat/heartbeatworker.h"
 namespace ICARUS {

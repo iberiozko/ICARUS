@@ -25,6 +25,7 @@ public:
     int fileVerbosity = 0;
 
     bool parseJsonValue(rapidjson::Value doc);
+    QVariant toVariant();
     void configureLogging();
 };
 

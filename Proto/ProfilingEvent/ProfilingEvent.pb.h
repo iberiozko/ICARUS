@@ -33,20 +33,19 @@ void  protobuf_AddDesc_ProfilingEvent_2eproto();
 void protobuf_AssignDesc_ProfilingEvent_2eproto();
 void protobuf_ShutdownFile_ProfilingEvent_2eproto();
 
-class TickCounter;
-class AverageCounter;
-class ProfilingEvent;
+class ProfilingShortItem;
+class ProfilingShortEvent;
 
 // ===================================================================
 
-class TickCounter : public ::google::protobuf::Message {
+class ProfilingShortItem : public ::google::protobuf::Message {
  public:
-  TickCounter();
-  virtual ~TickCounter();
+  ProfilingShortItem();
+  virtual ~ProfilingShortItem();
 
-  TickCounter(const TickCounter& from);
+  ProfilingShortItem(const ProfilingShortItem& from);
 
-  inline TickCounter& operator=(const TickCounter& from) {
+  inline ProfilingShortItem& operator=(const ProfilingShortItem& from) {
     CopyFrom(from);
     return *this;
   }
@@ -60,17 +59,17 @@ class TickCounter : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const TickCounter& default_instance();
+  static const ProfilingShortItem& default_instance();
 
-  void Swap(TickCounter* other);
+  void Swap(ProfilingShortItem* other);
 
   // implements Message ----------------------------------------------
 
-  TickCounter* New() const;
+  ProfilingShortItem* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const TickCounter& from);
-  void MergeFrom(const TickCounter& from);
+  void CopyFrom(const ProfilingShortItem& from);
+  void MergeFrom(const ProfilingShortItem& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -104,73 +103,53 @@ class TickCounter : public ::google::protobuf::Message {
   inline ::std::string* release_key();
   inline void set_allocated_key(::std::string* key);
 
-  // required uint64 minute = 2;
-  inline bool has_minute() const;
-  inline void clear_minute();
-  static const int kMinuteFieldNumber = 2;
-  inline ::google::protobuf::uint64 minute() const;
-  inline void set_minute(::google::protobuf::uint64 value);
+  // required double shortValue = 2;
+  inline bool has_shortvalue() const;
+  inline void clear_shortvalue();
+  static const int kShortValueFieldNumber = 2;
+  inline double shortvalue() const;
+  inline void set_shortvalue(double value);
 
-  // required uint64 hour = 3;
-  inline bool has_hour() const;
-  inline void clear_hour();
-  static const int kHourFieldNumber = 3;
-  inline ::google::protobuf::uint64 hour() const;
-  inline void set_hour(::google::protobuf::uint64 value);
+  // required double shortAverage = 3;
+  inline bool has_shortaverage() const;
+  inline void clear_shortaverage();
+  static const int kShortAverageFieldNumber = 3;
+  inline double shortaverage() const;
+  inline void set_shortaverage(double value);
 
-  // required uint64 day = 4;
-  inline bool has_day() const;
-  inline void clear_day();
-  static const int kDayFieldNumber = 4;
-  inline ::google::protobuf::uint64 day() const;
-  inline void set_day(::google::protobuf::uint64 value);
-
-  // required uint64 total = 5;
-  inline bool has_total() const;
-  inline void clear_total();
-  static const int kTotalFieldNumber = 5;
-  inline ::google::protobuf::uint64 total() const;
-  inline void set_total(::google::protobuf::uint64 value);
-
-  // @@protoc_insertion_point(class_scope:Proto.TickCounter)
+  // @@protoc_insertion_point(class_scope:Proto.ProfilingShortItem)
  private:
   inline void set_has_key();
   inline void clear_has_key();
-  inline void set_has_minute();
-  inline void clear_has_minute();
-  inline void set_has_hour();
-  inline void clear_has_hour();
-  inline void set_has_day();
-  inline void clear_has_day();
-  inline void set_has_total();
-  inline void clear_has_total();
+  inline void set_has_shortvalue();
+  inline void clear_has_shortvalue();
+  inline void set_has_shortaverage();
+  inline void clear_has_shortaverage();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::std::string* key_;
-  ::google::protobuf::uint64 minute_;
-  ::google::protobuf::uint64 hour_;
-  ::google::protobuf::uint64 day_;
-  ::google::protobuf::uint64 total_;
+  double shortvalue_;
+  double shortaverage_;
   friend void  protobuf_AddDesc_ProfilingEvent_2eproto();
   friend void protobuf_AssignDesc_ProfilingEvent_2eproto();
   friend void protobuf_ShutdownFile_ProfilingEvent_2eproto();
 
   void InitAsDefaultInstance();
-  static TickCounter* default_instance_;
+  static ProfilingShortItem* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class AverageCounter : public ::google::protobuf::Message {
+class ProfilingShortEvent : public ::google::protobuf::Message {
  public:
-  AverageCounter();
-  virtual ~AverageCounter();
+  ProfilingShortEvent();
+  virtual ~ProfilingShortEvent();
 
-  AverageCounter(const AverageCounter& from);
+  ProfilingShortEvent(const ProfilingShortEvent& from);
 
-  inline AverageCounter& operator=(const AverageCounter& from) {
+  inline ProfilingShortEvent& operator=(const ProfilingShortEvent& from) {
     CopyFrom(from);
     return *this;
   }
@@ -184,17 +163,17 @@ class AverageCounter : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const AverageCounter& default_instance();
+  static const ProfilingShortEvent& default_instance();
 
-  void Swap(AverageCounter* other);
+  void Swap(ProfilingShortEvent* other);
 
   // implements Message ----------------------------------------------
 
-  AverageCounter* New() const;
+  ProfilingShortEvent* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const AverageCounter& from);
-  void MergeFrom(const AverageCounter& from);
+  void CopyFrom(const ProfilingShortEvent& from);
+  void MergeFrom(const ProfilingShortEvent& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -216,245 +195,108 @@ class AverageCounter : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required string key = 1;
-  inline bool has_key() const;
-  inline void clear_key();
-  static const int kKeyFieldNumber = 1;
-  inline const ::std::string& key() const;
-  inline void set_key(const ::std::string& value);
-  inline void set_key(const char* value);
-  inline void set_key(const char* value, size_t size);
-  inline ::std::string* mutable_key();
-  inline ::std::string* release_key();
-  inline void set_allocated_key(::std::string* key);
+  // required string name = 1;
+  inline bool has_name() const;
+  inline void clear_name();
+  static const int kNameFieldNumber = 1;
+  inline const ::std::string& name() const;
+  inline void set_name(const ::std::string& value);
+  inline void set_name(const char* value);
+  inline void set_name(const char* value, size_t size);
+  inline ::std::string* mutable_name();
+  inline ::std::string* release_name();
+  inline void set_allocated_name(::std::string* name);
 
-  // required double minute = 2;
-  inline bool has_minute() const;
-  inline void clear_minute();
-  static const int kMinuteFieldNumber = 2;
-  inline double minute() const;
-  inline void set_minute(double value);
+  // repeated .Proto.ProfilingShortItem items = 2;
+  inline int items_size() const;
+  inline void clear_items();
+  static const int kItemsFieldNumber = 2;
+  inline const ::Proto::ProfilingShortItem& items(int index) const;
+  inline ::Proto::ProfilingShortItem* mutable_items(int index);
+  inline ::Proto::ProfilingShortItem* add_items();
+  inline const ::google::protobuf::RepeatedPtrField< ::Proto::ProfilingShortItem >&
+      items() const;
+  inline ::google::protobuf::RepeatedPtrField< ::Proto::ProfilingShortItem >*
+      mutable_items();
 
-  // required double hour = 3;
-  inline bool has_hour() const;
-  inline void clear_hour();
-  static const int kHourFieldNumber = 3;
-  inline double hour() const;
-  inline void set_hour(double value);
-
-  // required double day = 4;
-  inline bool has_day() const;
-  inline void clear_day();
-  static const int kDayFieldNumber = 4;
-  inline double day() const;
-  inline void set_day(double value);
-
-  // required double total = 5;
-  inline bool has_total() const;
-  inline void clear_total();
-  static const int kTotalFieldNumber = 5;
-  inline double total() const;
-  inline void set_total(double value);
-
-  // @@protoc_insertion_point(class_scope:Proto.AverageCounter)
+  // @@protoc_insertion_point(class_scope:Proto.ProfilingShortEvent)
  private:
-  inline void set_has_key();
-  inline void clear_has_key();
-  inline void set_has_minute();
-  inline void clear_has_minute();
-  inline void set_has_hour();
-  inline void clear_has_hour();
-  inline void set_has_day();
-  inline void clear_has_day();
-  inline void set_has_total();
-  inline void clear_has_total();
+  inline void set_has_name();
+  inline void clear_has_name();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::std::string* key_;
-  double minute_;
-  double hour_;
-  double day_;
-  double total_;
+  ::std::string* name_;
+  ::google::protobuf::RepeatedPtrField< ::Proto::ProfilingShortItem > items_;
   friend void  protobuf_AddDesc_ProfilingEvent_2eproto();
   friend void protobuf_AssignDesc_ProfilingEvent_2eproto();
   friend void protobuf_ShutdownFile_ProfilingEvent_2eproto();
 
   void InitAsDefaultInstance();
-  static AverageCounter* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class ProfilingEvent : public ::google::protobuf::Message {
- public:
-  ProfilingEvent();
-  virtual ~ProfilingEvent();
-
-  ProfilingEvent(const ProfilingEvent& from);
-
-  inline ProfilingEvent& operator=(const ProfilingEvent& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const ProfilingEvent& default_instance();
-
-  void Swap(ProfilingEvent* other);
-
-  // implements Message ----------------------------------------------
-
-  ProfilingEvent* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const ProfilingEvent& from);
-  void MergeFrom(const ProfilingEvent& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // required string source = 1;
-  inline bool has_source() const;
-  inline void clear_source();
-  static const int kSourceFieldNumber = 1;
-  inline const ::std::string& source() const;
-  inline void set_source(const ::std::string& value);
-  inline void set_source(const char* value);
-  inline void set_source(const char* value, size_t size);
-  inline ::std::string* mutable_source();
-  inline ::std::string* release_source();
-  inline void set_allocated_source(::std::string* source);
-
-  // repeated .Proto.TickCounter ticks = 2;
-  inline int ticks_size() const;
-  inline void clear_ticks();
-  static const int kTicksFieldNumber = 2;
-  inline const ::Proto::TickCounter& ticks(int index) const;
-  inline ::Proto::TickCounter* mutable_ticks(int index);
-  inline ::Proto::TickCounter* add_ticks();
-  inline const ::google::protobuf::RepeatedPtrField< ::Proto::TickCounter >&
-      ticks() const;
-  inline ::google::protobuf::RepeatedPtrField< ::Proto::TickCounter >*
-      mutable_ticks();
-
-  // repeated .Proto.AverageCounter averages = 3;
-  inline int averages_size() const;
-  inline void clear_averages();
-  static const int kAveragesFieldNumber = 3;
-  inline const ::Proto::AverageCounter& averages(int index) const;
-  inline ::Proto::AverageCounter* mutable_averages(int index);
-  inline ::Proto::AverageCounter* add_averages();
-  inline const ::google::protobuf::RepeatedPtrField< ::Proto::AverageCounter >&
-      averages() const;
-  inline ::google::protobuf::RepeatedPtrField< ::Proto::AverageCounter >*
-      mutable_averages();
-
-  // @@protoc_insertion_point(class_scope:Proto.ProfilingEvent)
- private:
-  inline void set_has_source();
-  inline void clear_has_source();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::std::string* source_;
-  ::google::protobuf::RepeatedPtrField< ::Proto::TickCounter > ticks_;
-  ::google::protobuf::RepeatedPtrField< ::Proto::AverageCounter > averages_;
-  friend void  protobuf_AddDesc_ProfilingEvent_2eproto();
-  friend void protobuf_AssignDesc_ProfilingEvent_2eproto();
-  friend void protobuf_ShutdownFile_ProfilingEvent_2eproto();
-
-  void InitAsDefaultInstance();
-  static ProfilingEvent* default_instance_;
+  static ProfilingShortEvent* default_instance_;
 };
 // ===================================================================
 
 
 // ===================================================================
 
-// TickCounter
+// ProfilingShortItem
 
 // required string key = 1;
-inline bool TickCounter::has_key() const {
+inline bool ProfilingShortItem::has_key() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void TickCounter::set_has_key() {
+inline void ProfilingShortItem::set_has_key() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void TickCounter::clear_has_key() {
+inline void ProfilingShortItem::clear_has_key() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void TickCounter::clear_key() {
+inline void ProfilingShortItem::clear_key() {
   if (key_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     key_->clear();
   }
   clear_has_key();
 }
-inline const ::std::string& TickCounter::key() const {
-  // @@protoc_insertion_point(field_get:Proto.TickCounter.key)
+inline const ::std::string& ProfilingShortItem::key() const {
+  // @@protoc_insertion_point(field_get:Proto.ProfilingShortItem.key)
   return *key_;
 }
-inline void TickCounter::set_key(const ::std::string& value) {
+inline void ProfilingShortItem::set_key(const ::std::string& value) {
   set_has_key();
   if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     key_ = new ::std::string;
   }
   key_->assign(value);
-  // @@protoc_insertion_point(field_set:Proto.TickCounter.key)
+  // @@protoc_insertion_point(field_set:Proto.ProfilingShortItem.key)
 }
-inline void TickCounter::set_key(const char* value) {
+inline void ProfilingShortItem::set_key(const char* value) {
   set_has_key();
   if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     key_ = new ::std::string;
   }
   key_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Proto.TickCounter.key)
+  // @@protoc_insertion_point(field_set_char:Proto.ProfilingShortItem.key)
 }
-inline void TickCounter::set_key(const char* value, size_t size) {
+inline void ProfilingShortItem::set_key(const char* value, size_t size) {
   set_has_key();
   if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     key_ = new ::std::string;
   }
   key_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Proto.TickCounter.key)
+  // @@protoc_insertion_point(field_set_pointer:Proto.ProfilingShortItem.key)
 }
-inline ::std::string* TickCounter::mutable_key() {
+inline ::std::string* ProfilingShortItem::mutable_key() {
   set_has_key();
   if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     key_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Proto.TickCounter.key)
+  // @@protoc_insertion_point(field_mutable:Proto.ProfilingShortItem.key)
   return key_;
 }
-inline ::std::string* TickCounter::release_key() {
+inline ::std::string* ProfilingShortItem::release_key() {
   clear_has_key();
   if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
@@ -464,7 +306,7 @@ inline ::std::string* TickCounter::release_key() {
     return temp;
   }
 }
-inline void TickCounter::set_allocated_key(::std::string* key) {
+inline void ProfilingShortItem::set_allocated_key(::std::string* key) {
   if (key_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete key_;
   }
@@ -475,419 +317,165 @@ inline void TickCounter::set_allocated_key(::std::string* key) {
     clear_has_key();
     key_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Proto.TickCounter.key)
+  // @@protoc_insertion_point(field_set_allocated:Proto.ProfilingShortItem.key)
 }
 
-// required uint64 minute = 2;
-inline bool TickCounter::has_minute() const {
+// required double shortValue = 2;
+inline bool ProfilingShortItem::has_shortvalue() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void TickCounter::set_has_minute() {
+inline void ProfilingShortItem::set_has_shortvalue() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void TickCounter::clear_has_minute() {
+inline void ProfilingShortItem::clear_has_shortvalue() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void TickCounter::clear_minute() {
-  minute_ = GOOGLE_ULONGLONG(0);
-  clear_has_minute();
+inline void ProfilingShortItem::clear_shortvalue() {
+  shortvalue_ = 0;
+  clear_has_shortvalue();
 }
-inline ::google::protobuf::uint64 TickCounter::minute() const {
-  // @@protoc_insertion_point(field_get:Proto.TickCounter.minute)
-  return minute_;
+inline double ProfilingShortItem::shortvalue() const {
+  // @@protoc_insertion_point(field_get:Proto.ProfilingShortItem.shortValue)
+  return shortvalue_;
 }
-inline void TickCounter::set_minute(::google::protobuf::uint64 value) {
-  set_has_minute();
-  minute_ = value;
-  // @@protoc_insertion_point(field_set:Proto.TickCounter.minute)
+inline void ProfilingShortItem::set_shortvalue(double value) {
+  set_has_shortvalue();
+  shortvalue_ = value;
+  // @@protoc_insertion_point(field_set:Proto.ProfilingShortItem.shortValue)
 }
 
-// required uint64 hour = 3;
-inline bool TickCounter::has_hour() const {
+// required double shortAverage = 3;
+inline bool ProfilingShortItem::has_shortaverage() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void TickCounter::set_has_hour() {
+inline void ProfilingShortItem::set_has_shortaverage() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void TickCounter::clear_has_hour() {
+inline void ProfilingShortItem::clear_has_shortaverage() {
   _has_bits_[0] &= ~0x00000004u;
 }
-inline void TickCounter::clear_hour() {
-  hour_ = GOOGLE_ULONGLONG(0);
-  clear_has_hour();
+inline void ProfilingShortItem::clear_shortaverage() {
+  shortaverage_ = 0;
+  clear_has_shortaverage();
 }
-inline ::google::protobuf::uint64 TickCounter::hour() const {
-  // @@protoc_insertion_point(field_get:Proto.TickCounter.hour)
-  return hour_;
+inline double ProfilingShortItem::shortaverage() const {
+  // @@protoc_insertion_point(field_get:Proto.ProfilingShortItem.shortAverage)
+  return shortaverage_;
 }
-inline void TickCounter::set_hour(::google::protobuf::uint64 value) {
-  set_has_hour();
-  hour_ = value;
-  // @@protoc_insertion_point(field_set:Proto.TickCounter.hour)
-}
-
-// required uint64 day = 4;
-inline bool TickCounter::has_day() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void TickCounter::set_has_day() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void TickCounter::clear_has_day() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void TickCounter::clear_day() {
-  day_ = GOOGLE_ULONGLONG(0);
-  clear_has_day();
-}
-inline ::google::protobuf::uint64 TickCounter::day() const {
-  // @@protoc_insertion_point(field_get:Proto.TickCounter.day)
-  return day_;
-}
-inline void TickCounter::set_day(::google::protobuf::uint64 value) {
-  set_has_day();
-  day_ = value;
-  // @@protoc_insertion_point(field_set:Proto.TickCounter.day)
-}
-
-// required uint64 total = 5;
-inline bool TickCounter::has_total() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-inline void TickCounter::set_has_total() {
-  _has_bits_[0] |= 0x00000010u;
-}
-inline void TickCounter::clear_has_total() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-inline void TickCounter::clear_total() {
-  total_ = GOOGLE_ULONGLONG(0);
-  clear_has_total();
-}
-inline ::google::protobuf::uint64 TickCounter::total() const {
-  // @@protoc_insertion_point(field_get:Proto.TickCounter.total)
-  return total_;
-}
-inline void TickCounter::set_total(::google::protobuf::uint64 value) {
-  set_has_total();
-  total_ = value;
-  // @@protoc_insertion_point(field_set:Proto.TickCounter.total)
+inline void ProfilingShortItem::set_shortaverage(double value) {
+  set_has_shortaverage();
+  shortaverage_ = value;
+  // @@protoc_insertion_point(field_set:Proto.ProfilingShortItem.shortAverage)
 }
 
 // -------------------------------------------------------------------
 
-// AverageCounter
+// ProfilingShortEvent
 
-// required string key = 1;
-inline bool AverageCounter::has_key() const {
+// required string name = 1;
+inline bool ProfilingShortEvent::has_name() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void AverageCounter::set_has_key() {
+inline void ProfilingShortEvent::set_has_name() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void AverageCounter::clear_has_key() {
+inline void ProfilingShortEvent::clear_has_name() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void AverageCounter::clear_key() {
-  if (key_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    key_->clear();
+inline void ProfilingShortEvent::clear_name() {
+  if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_->clear();
   }
-  clear_has_key();
+  clear_has_name();
 }
-inline const ::std::string& AverageCounter::key() const {
-  // @@protoc_insertion_point(field_get:Proto.AverageCounter.key)
-  return *key_;
+inline const ::std::string& ProfilingShortEvent::name() const {
+  // @@protoc_insertion_point(field_get:Proto.ProfilingShortEvent.name)
+  return *name_;
 }
-inline void AverageCounter::set_key(const ::std::string& value) {
-  set_has_key();
-  if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    key_ = new ::std::string;
+inline void ProfilingShortEvent::set_name(const ::std::string& value) {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_ = new ::std::string;
   }
-  key_->assign(value);
-  // @@protoc_insertion_point(field_set:Proto.AverageCounter.key)
+  name_->assign(value);
+  // @@protoc_insertion_point(field_set:Proto.ProfilingShortEvent.name)
 }
-inline void AverageCounter::set_key(const char* value) {
-  set_has_key();
-  if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    key_ = new ::std::string;
+inline void ProfilingShortEvent::set_name(const char* value) {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_ = new ::std::string;
   }
-  key_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Proto.AverageCounter.key)
+  name_->assign(value);
+  // @@protoc_insertion_point(field_set_char:Proto.ProfilingShortEvent.name)
 }
-inline void AverageCounter::set_key(const char* value, size_t size) {
-  set_has_key();
-  if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    key_ = new ::std::string;
+inline void ProfilingShortEvent::set_name(const char* value, size_t size) {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_ = new ::std::string;
   }
-  key_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Proto.AverageCounter.key)
+  name_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Proto.ProfilingShortEvent.name)
 }
-inline ::std::string* AverageCounter::mutable_key() {
-  set_has_key();
-  if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    key_ = new ::std::string;
+inline ::std::string* ProfilingShortEvent::mutable_name() {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:Proto.AverageCounter.key)
-  return key_;
+  // @@protoc_insertion_point(field_mutable:Proto.ProfilingShortEvent.name)
+  return name_;
 }
-inline ::std::string* AverageCounter::release_key() {
-  clear_has_key();
-  if (key_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+inline ::std::string* ProfilingShortEvent::release_name() {
+  clear_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
   } else {
-    ::std::string* temp = key_;
-    key_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    ::std::string* temp = name_;
+    name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     return temp;
   }
 }
-inline void AverageCounter::set_allocated_key(::std::string* key) {
-  if (key_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete key_;
+inline void ProfilingShortEvent::set_allocated_name(::std::string* name) {
+  if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete name_;
   }
-  if (key) {
-    set_has_key();
-    key_ = key;
+  if (name) {
+    set_has_name();
+    name_ = name;
   } else {
-    clear_has_key();
-    key_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_name();
+    name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:Proto.AverageCounter.key)
+  // @@protoc_insertion_point(field_set_allocated:Proto.ProfilingShortEvent.name)
 }
 
-// required double minute = 2;
-inline bool AverageCounter::has_minute() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+// repeated .Proto.ProfilingShortItem items = 2;
+inline int ProfilingShortEvent::items_size() const {
+  return items_.size();
 }
-inline void AverageCounter::set_has_minute() {
-  _has_bits_[0] |= 0x00000002u;
+inline void ProfilingShortEvent::clear_items() {
+  items_.Clear();
 }
-inline void AverageCounter::clear_has_minute() {
-  _has_bits_[0] &= ~0x00000002u;
+inline const ::Proto::ProfilingShortItem& ProfilingShortEvent::items(int index) const {
+  // @@protoc_insertion_point(field_get:Proto.ProfilingShortEvent.items)
+  return items_.Get(index);
 }
-inline void AverageCounter::clear_minute() {
-  minute_ = 0;
-  clear_has_minute();
+inline ::Proto::ProfilingShortItem* ProfilingShortEvent::mutable_items(int index) {
+  // @@protoc_insertion_point(field_mutable:Proto.ProfilingShortEvent.items)
+  return items_.Mutable(index);
 }
-inline double AverageCounter::minute() const {
-  // @@protoc_insertion_point(field_get:Proto.AverageCounter.minute)
-  return minute_;
+inline ::Proto::ProfilingShortItem* ProfilingShortEvent::add_items() {
+  // @@protoc_insertion_point(field_add:Proto.ProfilingShortEvent.items)
+  return items_.Add();
 }
-inline void AverageCounter::set_minute(double value) {
-  set_has_minute();
-  minute_ = value;
-  // @@protoc_insertion_point(field_set:Proto.AverageCounter.minute)
+inline const ::google::protobuf::RepeatedPtrField< ::Proto::ProfilingShortItem >&
+ProfilingShortEvent::items() const {
+  // @@protoc_insertion_point(field_list:Proto.ProfilingShortEvent.items)
+  return items_;
 }
-
-// required double hour = 3;
-inline bool AverageCounter::has_hour() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void AverageCounter::set_has_hour() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void AverageCounter::clear_has_hour() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void AverageCounter::clear_hour() {
-  hour_ = 0;
-  clear_has_hour();
-}
-inline double AverageCounter::hour() const {
-  // @@protoc_insertion_point(field_get:Proto.AverageCounter.hour)
-  return hour_;
-}
-inline void AverageCounter::set_hour(double value) {
-  set_has_hour();
-  hour_ = value;
-  // @@protoc_insertion_point(field_set:Proto.AverageCounter.hour)
-}
-
-// required double day = 4;
-inline bool AverageCounter::has_day() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void AverageCounter::set_has_day() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void AverageCounter::clear_has_day() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void AverageCounter::clear_day() {
-  day_ = 0;
-  clear_has_day();
-}
-inline double AverageCounter::day() const {
-  // @@protoc_insertion_point(field_get:Proto.AverageCounter.day)
-  return day_;
-}
-inline void AverageCounter::set_day(double value) {
-  set_has_day();
-  day_ = value;
-  // @@protoc_insertion_point(field_set:Proto.AverageCounter.day)
-}
-
-// required double total = 5;
-inline bool AverageCounter::has_total() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-inline void AverageCounter::set_has_total() {
-  _has_bits_[0] |= 0x00000010u;
-}
-inline void AverageCounter::clear_has_total() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-inline void AverageCounter::clear_total() {
-  total_ = 0;
-  clear_has_total();
-}
-inline double AverageCounter::total() const {
-  // @@protoc_insertion_point(field_get:Proto.AverageCounter.total)
-  return total_;
-}
-inline void AverageCounter::set_total(double value) {
-  set_has_total();
-  total_ = value;
-  // @@protoc_insertion_point(field_set:Proto.AverageCounter.total)
-}
-
-// -------------------------------------------------------------------
-
-// ProfilingEvent
-
-// required string source = 1;
-inline bool ProfilingEvent::has_source() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void ProfilingEvent::set_has_source() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void ProfilingEvent::clear_has_source() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void ProfilingEvent::clear_source() {
-  if (source_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    source_->clear();
-  }
-  clear_has_source();
-}
-inline const ::std::string& ProfilingEvent::source() const {
-  // @@protoc_insertion_point(field_get:Proto.ProfilingEvent.source)
-  return *source_;
-}
-inline void ProfilingEvent::set_source(const ::std::string& value) {
-  set_has_source();
-  if (source_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    source_ = new ::std::string;
-  }
-  source_->assign(value);
-  // @@protoc_insertion_point(field_set:Proto.ProfilingEvent.source)
-}
-inline void ProfilingEvent::set_source(const char* value) {
-  set_has_source();
-  if (source_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    source_ = new ::std::string;
-  }
-  source_->assign(value);
-  // @@protoc_insertion_point(field_set_char:Proto.ProfilingEvent.source)
-}
-inline void ProfilingEvent::set_source(const char* value, size_t size) {
-  set_has_source();
-  if (source_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    source_ = new ::std::string;
-  }
-  source_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:Proto.ProfilingEvent.source)
-}
-inline ::std::string* ProfilingEvent::mutable_source() {
-  set_has_source();
-  if (source_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    source_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:Proto.ProfilingEvent.source)
-  return source_;
-}
-inline ::std::string* ProfilingEvent::release_source() {
-  clear_has_source();
-  if (source_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = source_;
-    source_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void ProfilingEvent::set_allocated_source(::std::string* source) {
-  if (source_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete source_;
-  }
-  if (source) {
-    set_has_source();
-    source_ = source;
-  } else {
-    clear_has_source();
-    source_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:Proto.ProfilingEvent.source)
-}
-
-// repeated .Proto.TickCounter ticks = 2;
-inline int ProfilingEvent::ticks_size() const {
-  return ticks_.size();
-}
-inline void ProfilingEvent::clear_ticks() {
-  ticks_.Clear();
-}
-inline const ::Proto::TickCounter& ProfilingEvent::ticks(int index) const {
-  // @@protoc_insertion_point(field_get:Proto.ProfilingEvent.ticks)
-  return ticks_.Get(index);
-}
-inline ::Proto::TickCounter* ProfilingEvent::mutable_ticks(int index) {
-  // @@protoc_insertion_point(field_mutable:Proto.ProfilingEvent.ticks)
-  return ticks_.Mutable(index);
-}
-inline ::Proto::TickCounter* ProfilingEvent::add_ticks() {
-  // @@protoc_insertion_point(field_add:Proto.ProfilingEvent.ticks)
-  return ticks_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::Proto::TickCounter >&
-ProfilingEvent::ticks() const {
-  // @@protoc_insertion_point(field_list:Proto.ProfilingEvent.ticks)
-  return ticks_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::Proto::TickCounter >*
-ProfilingEvent::mutable_ticks() {
-  // @@protoc_insertion_point(field_mutable_list:Proto.ProfilingEvent.ticks)
-  return &ticks_;
-}
-
-// repeated .Proto.AverageCounter averages = 3;
-inline int ProfilingEvent::averages_size() const {
-  return averages_.size();
-}
-inline void ProfilingEvent::clear_averages() {
-  averages_.Clear();
-}
-inline const ::Proto::AverageCounter& ProfilingEvent::averages(int index) const {
-  // @@protoc_insertion_point(field_get:Proto.ProfilingEvent.averages)
-  return averages_.Get(index);
-}
-inline ::Proto::AverageCounter* ProfilingEvent::mutable_averages(int index) {
-  // @@protoc_insertion_point(field_mutable:Proto.ProfilingEvent.averages)
-  return averages_.Mutable(index);
-}
-inline ::Proto::AverageCounter* ProfilingEvent::add_averages() {
-  // @@protoc_insertion_point(field_add:Proto.ProfilingEvent.averages)
-  return averages_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::Proto::AverageCounter >&
-ProfilingEvent::averages() const {
-  // @@protoc_insertion_point(field_list:Proto.ProfilingEvent.averages)
-  return averages_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::Proto::AverageCounter >*
-ProfilingEvent::mutable_averages() {
-  // @@protoc_insertion_point(field_mutable_list:Proto.ProfilingEvent.averages)
-  return &averages_;
+inline ::google::protobuf::RepeatedPtrField< ::Proto::ProfilingShortItem >*
+ProfilingShortEvent::mutable_items() {
+  // @@protoc_insertion_point(field_mutable_list:Proto.ProfilingShortEvent.items)
+  return &items_;
 }
 
 

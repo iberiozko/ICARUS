@@ -28,6 +28,7 @@ public:
     std::string name;
 
     bool parseJsonValue(rapidjson::Value doc);
+    QVariant toVariant();
 };
 
 } // namespace Config

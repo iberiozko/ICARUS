@@ -20,15 +20,12 @@ namespace Proto {
 
 namespace {
 
-const ::google::protobuf::Descriptor* TickCounter_descriptor_ = NULL;
+const ::google::protobuf::Descriptor* ProfilingShortItem_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
-  TickCounter_reflection_ = NULL;
-const ::google::protobuf::Descriptor* AverageCounter_descriptor_ = NULL;
+  ProfilingShortItem_reflection_ = NULL;
+const ::google::protobuf::Descriptor* ProfilingShortEvent_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
-  AverageCounter_reflection_ = NULL;
-const ::google::protobuf::Descriptor* ProfilingEvent_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  ProfilingEvent_reflection_ = NULL;
+  ProfilingShortEvent_reflection_ = NULL;
 
 }  // namespace
 
@@ -39,61 +36,39 @@ void protobuf_AssignDesc_ProfilingEvent_2eproto() {
     ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
       "ProfilingEvent.proto");
   GOOGLE_CHECK(file != NULL);
-  TickCounter_descriptor_ = file->message_type(0);
-  static const int TickCounter_offsets_[5] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TickCounter, key_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TickCounter, minute_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TickCounter, hour_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TickCounter, day_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TickCounter, total_),
+  ProfilingShortItem_descriptor_ = file->message_type(0);
+  static const int ProfilingShortItem_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingShortItem, key_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingShortItem, shortvalue_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingShortItem, shortaverage_),
   };
-  TickCounter_reflection_ =
+  ProfilingShortItem_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
-      TickCounter_descriptor_,
-      TickCounter::default_instance_,
-      TickCounter_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TickCounter, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TickCounter, _unknown_fields_),
+      ProfilingShortItem_descriptor_,
+      ProfilingShortItem::default_instance_,
+      ProfilingShortItem_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingShortItem, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingShortItem, _unknown_fields_),
       -1,
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(TickCounter));
-  AverageCounter_descriptor_ = file->message_type(1);
-  static const int AverageCounter_offsets_[5] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AverageCounter, key_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AverageCounter, minute_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AverageCounter, hour_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AverageCounter, day_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AverageCounter, total_),
+      sizeof(ProfilingShortItem));
+  ProfilingShortEvent_descriptor_ = file->message_type(1);
+  static const int ProfilingShortEvent_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingShortEvent, name_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingShortEvent, items_),
   };
-  AverageCounter_reflection_ =
+  ProfilingShortEvent_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
-      AverageCounter_descriptor_,
-      AverageCounter::default_instance_,
-      AverageCounter_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AverageCounter, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AverageCounter, _unknown_fields_),
+      ProfilingShortEvent_descriptor_,
+      ProfilingShortEvent::default_instance_,
+      ProfilingShortEvent_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingShortEvent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingShortEvent, _unknown_fields_),
       -1,
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(AverageCounter));
-  ProfilingEvent_descriptor_ = file->message_type(2);
-  static const int ProfilingEvent_offsets_[3] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingEvent, source_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingEvent, ticks_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingEvent, averages_),
-  };
-  ProfilingEvent_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      ProfilingEvent_descriptor_,
-      ProfilingEvent::default_instance_,
-      ProfilingEvent_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingEvent, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProfilingEvent, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(ProfilingEvent));
+      sizeof(ProfilingShortEvent));
 }
 
 namespace {
@@ -107,22 +82,18 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    TickCounter_descriptor_, &TickCounter::default_instance());
+    ProfilingShortItem_descriptor_, &ProfilingShortItem::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    AverageCounter_descriptor_, &AverageCounter::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    ProfilingEvent_descriptor_, &ProfilingEvent::default_instance());
+    ProfilingShortEvent_descriptor_, &ProfilingShortEvent::default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_ProfilingEvent_2eproto() {
-  delete TickCounter::default_instance_;
-  delete TickCounter_reflection_;
-  delete AverageCounter::default_instance_;
-  delete AverageCounter_reflection_;
-  delete ProfilingEvent::default_instance_;
-  delete ProfilingEvent_reflection_;
+  delete ProfilingShortItem::default_instance_;
+  delete ProfilingShortItem_reflection_;
+  delete ProfilingShortEvent::default_instance_;
+  delete ProfilingShortEvent_reflection_;
 }
 
 void protobuf_AddDesc_ProfilingEvent_2eproto() {
@@ -132,22 +103,17 @@ void protobuf_AddDesc_ProfilingEvent_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\024ProfilingEvent.proto\022\005Proto\"T\n\013TickCou"
-    "nter\022\013\n\003key\030\001 \002(\t\022\016\n\006minute\030\002 \002(\004\022\014\n\004hou"
-    "r\030\003 \002(\004\022\013\n\003day\030\004 \002(\004\022\r\n\005total\030\005 \002(\004\"W\n\016A"
-    "verageCounter\022\013\n\003key\030\001 \002(\t\022\016\n\006minute\030\002 \002"
-    "(\001\022\014\n\004hour\030\003 \002(\001\022\013\n\003day\030\004 \002(\001\022\r\n\005total\030\005"
-    " \002(\001\"l\n\016ProfilingEvent\022\016\n\006source\030\001 \002(\t\022!"
-    "\n\005ticks\030\002 \003(\0132\022.Proto.TickCounter\022\'\n\010ave"
-    "rages\030\003 \003(\0132\025.Proto.AverageCounter", 314);
+    "\n\024ProfilingEvent.proto\022\005Proto\"K\n\022Profili"
+    "ngShortItem\022\013\n\003key\030\001 \002(\t\022\022\n\nshortValue\030\002"
+    " \002(\001\022\024\n\014shortAverage\030\003 \002(\001\"M\n\023ProfilingS"
+    "hortEvent\022\014\n\004name\030\001 \002(\t\022(\n\005items\030\002 \003(\0132\031"
+    ".Proto.ProfilingShortItem", 185);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "ProfilingEvent.proto", &protobuf_RegisterTypes);
-  TickCounter::default_instance_ = new TickCounter();
-  AverageCounter::default_instance_ = new AverageCounter();
-  ProfilingEvent::default_instance_ = new ProfilingEvent();
-  TickCounter::default_instance_->InitAsDefaultInstance();
-  AverageCounter::default_instance_->InitAsDefaultInstance();
-  ProfilingEvent::default_instance_->InitAsDefaultInstance();
+  ProfilingShortItem::default_instance_ = new ProfilingShortItem();
+  ProfilingShortEvent::default_instance_ = new ProfilingShortEvent();
+  ProfilingShortItem::default_instance_->InitAsDefaultInstance();
+  ProfilingShortEvent::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_ProfilingEvent_2eproto);
 }
 
@@ -161,46 +127,42 @@ struct StaticDescriptorInitializer_ProfilingEvent_2eproto {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int TickCounter::kKeyFieldNumber;
-const int TickCounter::kMinuteFieldNumber;
-const int TickCounter::kHourFieldNumber;
-const int TickCounter::kDayFieldNumber;
-const int TickCounter::kTotalFieldNumber;
+const int ProfilingShortItem::kKeyFieldNumber;
+const int ProfilingShortItem::kShortValueFieldNumber;
+const int ProfilingShortItem::kShortAverageFieldNumber;
 #endif  // !_MSC_VER
 
-TickCounter::TickCounter()
+ProfilingShortItem::ProfilingShortItem()
   : ::google::protobuf::Message() {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:Proto.TickCounter)
+  // @@protoc_insertion_point(constructor:Proto.ProfilingShortItem)
 }
 
-void TickCounter::InitAsDefaultInstance() {
+void ProfilingShortItem::InitAsDefaultInstance() {
 }
 
-TickCounter::TickCounter(const TickCounter& from)
+ProfilingShortItem::ProfilingShortItem(const ProfilingShortItem& from)
   : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:Proto.TickCounter)
+  // @@protoc_insertion_point(copy_constructor:Proto.ProfilingShortItem)
 }
 
-void TickCounter::SharedCtor() {
+void ProfilingShortItem::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   key_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  minute_ = GOOGLE_ULONGLONG(0);
-  hour_ = GOOGLE_ULONGLONG(0);
-  day_ = GOOGLE_ULONGLONG(0);
-  total_ = GOOGLE_ULONGLONG(0);
+  shortvalue_ = 0;
+  shortaverage_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
-TickCounter::~TickCounter() {
-  // @@protoc_insertion_point(destructor:Proto.TickCounter)
+ProfilingShortItem::~ProfilingShortItem() {
+  // @@protoc_insertion_point(destructor:Proto.ProfilingShortItem)
   SharedDtor();
 }
 
-void TickCounter::SharedDtor() {
+void ProfilingShortItem::SharedDtor() {
   if (key_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete key_;
   }
@@ -208,30 +170,30 @@ void TickCounter::SharedDtor() {
   }
 }
 
-void TickCounter::SetCachedSize(int size) const {
+void ProfilingShortItem::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* TickCounter::descriptor() {
+const ::google::protobuf::Descriptor* ProfilingShortItem::descriptor() {
   protobuf_AssignDescriptorsOnce();
-  return TickCounter_descriptor_;
+  return ProfilingShortItem_descriptor_;
 }
 
-const TickCounter& TickCounter::default_instance() {
+const ProfilingShortItem& ProfilingShortItem::default_instance() {
   if (default_instance_ == NULL) protobuf_AddDesc_ProfilingEvent_2eproto();
   return *default_instance_;
 }
 
-TickCounter* TickCounter::default_instance_ = NULL;
+ProfilingShortItem* ProfilingShortItem::default_instance_ = NULL;
 
-TickCounter* TickCounter::New() const {
-  return new TickCounter;
+ProfilingShortItem* ProfilingShortItem::New() const {
+  return new ProfilingShortItem;
 }
 
-void TickCounter::Clear() {
+void ProfilingShortItem::Clear() {
 #define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<TickCounter*>(16)->f) - \
+  &reinterpret_cast<ProfilingShortItem*>(16)->f) - \
    reinterpret_cast<char*>(16))
 
 #define ZR_(first, last) do {                              \
@@ -240,8 +202,8 @@ void TickCounter::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 31) {
-    ZR_(minute_, total_);
+  if (_has_bits_[0 / 32] & 7) {
+    ZR_(shortvalue_, shortaverage_);
     if (has_key()) {
       if (key_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         key_->clear();
@@ -256,11 +218,11 @@ void TickCounter::Clear() {
   mutable_unknown_fields()->Clear();
 }
 
-bool TickCounter::MergePartialFromCodedStream(
+bool ProfilingShortItem::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Proto.TickCounter)
+  // @@protoc_insertion_point(parse_start:Proto.ProfilingShortItem)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
     tag = p.first;
@@ -278,476 +240,33 @@ bool TickCounter::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(16)) goto parse_minute;
+        if (input->ExpectTag(17)) goto parse_shortValue;
         break;
       }
 
-      // required uint64 minute = 2;
-      case 2: {
-        if (tag == 16) {
-         parse_minute:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &minute_)));
-          set_has_minute();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(24)) goto parse_hour;
-        break;
-      }
-
-      // required uint64 hour = 3;
-      case 3: {
-        if (tag == 24) {
-         parse_hour:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &hour_)));
-          set_has_hour();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(32)) goto parse_day;
-        break;
-      }
-
-      // required uint64 day = 4;
-      case 4: {
-        if (tag == 32) {
-         parse_day:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &day_)));
-          set_has_day();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(40)) goto parse_total;
-        break;
-      }
-
-      // required uint64 total = 5;
-      case 5: {
-        if (tag == 40) {
-         parse_total:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &total_)));
-          set_has_total();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectAtEnd()) goto success;
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:Proto.TickCounter)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:Proto.TickCounter)
-  return false;
-#undef DO_
-}
-
-void TickCounter::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Proto.TickCounter)
-  // required string key = 1;
-  if (has_key()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->key().data(), this->key().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "key");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->key(), output);
-  }
-
-  // required uint64 minute = 2;
-  if (has_minute()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->minute(), output);
-  }
-
-  // required uint64 hour = 3;
-  if (has_hour()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->hour(), output);
-  }
-
-  // required uint64 day = 4;
-  if (has_day()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(4, this->day(), output);
-  }
-
-  // required uint64 total = 5;
-  if (has_total()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->total(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:Proto.TickCounter)
-}
-
-::google::protobuf::uint8* TickCounter::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Proto.TickCounter)
-  // required string key = 1;
-  if (has_key()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->key().data(), this->key().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "key");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->key(), target);
-  }
-
-  // required uint64 minute = 2;
-  if (has_minute()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->minute(), target);
-  }
-
-  // required uint64 hour = 3;
-  if (has_hour()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->hour(), target);
-  }
-
-  // required uint64 day = 4;
-  if (has_day()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(4, this->day(), target);
-  }
-
-  // required uint64 total = 5;
-  if (has_total()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->total(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:Proto.TickCounter)
-  return target;
-}
-
-int TickCounter::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required string key = 1;
-    if (has_key()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->key());
-    }
-
-    // required uint64 minute = 2;
-    if (has_minute()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt64Size(
-          this->minute());
-    }
-
-    // required uint64 hour = 3;
-    if (has_hour()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt64Size(
-          this->hour());
-    }
-
-    // required uint64 day = 4;
-    if (has_day()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt64Size(
-          this->day());
-    }
-
-    // required uint64 total = 5;
-    if (has_total()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt64Size(
-          this->total());
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void TickCounter::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const TickCounter* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const TickCounter*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void TickCounter::MergeFrom(const TickCounter& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_key()) {
-      set_key(from.key());
-    }
-    if (from.has_minute()) {
-      set_minute(from.minute());
-    }
-    if (from.has_hour()) {
-      set_hour(from.hour());
-    }
-    if (from.has_day()) {
-      set_day(from.day());
-    }
-    if (from.has_total()) {
-      set_total(from.total());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void TickCounter::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void TickCounter::CopyFrom(const TickCounter& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool TickCounter::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000001f) != 0x0000001f) return false;
-
-  return true;
-}
-
-void TickCounter::Swap(TickCounter* other) {
-  if (other != this) {
-    std::swap(key_, other->key_);
-    std::swap(minute_, other->minute_);
-    std::swap(hour_, other->hour_);
-    std::swap(day_, other->day_);
-    std::swap(total_, other->total_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata TickCounter::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = TickCounter_descriptor_;
-  metadata.reflection = TickCounter_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int AverageCounter::kKeyFieldNumber;
-const int AverageCounter::kMinuteFieldNumber;
-const int AverageCounter::kHourFieldNumber;
-const int AverageCounter::kDayFieldNumber;
-const int AverageCounter::kTotalFieldNumber;
-#endif  // !_MSC_VER
-
-AverageCounter::AverageCounter()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:Proto.AverageCounter)
-}
-
-void AverageCounter::InitAsDefaultInstance() {
-}
-
-AverageCounter::AverageCounter(const AverageCounter& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:Proto.AverageCounter)
-}
-
-void AverageCounter::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
-  _cached_size_ = 0;
-  key_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  minute_ = 0;
-  hour_ = 0;
-  day_ = 0;
-  total_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-AverageCounter::~AverageCounter() {
-  // @@protoc_insertion_point(destructor:Proto.AverageCounter)
-  SharedDtor();
-}
-
-void AverageCounter::SharedDtor() {
-  if (key_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete key_;
-  }
-  if (this != default_instance_) {
-  }
-}
-
-void AverageCounter::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* AverageCounter::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return AverageCounter_descriptor_;
-}
-
-const AverageCounter& AverageCounter::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_ProfilingEvent_2eproto();
-  return *default_instance_;
-}
-
-AverageCounter* AverageCounter::default_instance_ = NULL;
-
-AverageCounter* AverageCounter::New() const {
-  return new AverageCounter;
-}
-
-void AverageCounter::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<AverageCounter*>(16)->f) - \
-   reinterpret_cast<char*>(16))
-
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
-
-  if (_has_bits_[0 / 32] & 31) {
-    ZR_(minute_, total_);
-    if (has_key()) {
-      if (key_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        key_->clear();
-      }
-    }
-  }
-
-#undef OFFSET_OF_FIELD_
-#undef ZR_
-
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool AverageCounter::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Proto.AverageCounter)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string key = 1;
-      case 1: {
-        if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_key()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->key().data(), this->key().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "key");
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(17)) goto parse_minute;
-        break;
-      }
-
-      // required double minute = 2;
+      // required double shortValue = 2;
       case 2: {
         if (tag == 17) {
-         parse_minute:
+         parse_shortValue:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &minute_)));
-          set_has_minute();
+                 input, &shortvalue_)));
+          set_has_shortvalue();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(25)) goto parse_hour;
+        if (input->ExpectTag(25)) goto parse_shortAverage;
         break;
       }
 
-      // required double hour = 3;
+      // required double shortAverage = 3;
       case 3: {
         if (tag == 25) {
-         parse_hour:
+         parse_shortAverage:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &hour_)));
-          set_has_hour();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(33)) goto parse_day;
-        break;
-      }
-
-      // required double day = 4;
-      case 4: {
-        if (tag == 33) {
-         parse_day:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &day_)));
-          set_has_day();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(41)) goto parse_total;
-        break;
-      }
-
-      // required double total = 5;
-      case 5: {
-        if (tag == 41) {
-         parse_total:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &total_)));
-          set_has_total();
+                 input, &shortaverage_)));
+          set_has_shortaverage();
         } else {
           goto handle_unusual;
         }
@@ -769,17 +288,17 @@ bool AverageCounter::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:Proto.AverageCounter)
+  // @@protoc_insertion_point(parse_success:Proto.ProfilingShortItem)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:Proto.AverageCounter)
+  // @@protoc_insertion_point(parse_failure:Proto.ProfilingShortItem)
   return false;
 #undef DO_
 }
 
-void AverageCounter::SerializeWithCachedSizes(
+void ProfilingShortItem::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Proto.AverageCounter)
+  // @@protoc_insertion_point(serialize_start:Proto.ProfilingShortItem)
   // required string key = 1;
   if (has_key()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
@@ -790,36 +309,26 @@ void AverageCounter::SerializeWithCachedSizes(
       1, this->key(), output);
   }
 
-  // required double minute = 2;
-  if (has_minute()) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->minute(), output);
+  // required double shortValue = 2;
+  if (has_shortvalue()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->shortvalue(), output);
   }
 
-  // required double hour = 3;
-  if (has_hour()) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->hour(), output);
-  }
-
-  // required double day = 4;
-  if (has_day()) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(4, this->day(), output);
-  }
-
-  // required double total = 5;
-  if (has_total()) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(5, this->total(), output);
+  // required double shortAverage = 3;
+  if (has_shortaverage()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->shortaverage(), output);
   }
 
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:Proto.AverageCounter)
+  // @@protoc_insertion_point(serialize_end:Proto.ProfilingShortItem)
 }
 
-::google::protobuf::uint8* AverageCounter::SerializeWithCachedSizesToArray(
+::google::protobuf::uint8* ProfilingShortItem::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Proto.AverageCounter)
+  // @@protoc_insertion_point(serialize_to_array_start:Proto.ProfilingShortItem)
   // required string key = 1;
   if (has_key()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
@@ -831,35 +340,25 @@ void AverageCounter::SerializeWithCachedSizes(
         1, this->key(), target);
   }
 
-  // required double minute = 2;
-  if (has_minute()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->minute(), target);
+  // required double shortValue = 2;
+  if (has_shortvalue()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->shortvalue(), target);
   }
 
-  // required double hour = 3;
-  if (has_hour()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->hour(), target);
-  }
-
-  // required double day = 4;
-  if (has_day()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(4, this->day(), target);
-  }
-
-  // required double total = 5;
-  if (has_total()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(5, this->total(), target);
+  // required double shortAverage = 3;
+  if (has_shortaverage()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->shortaverage(), target);
   }
 
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Proto.AverageCounter)
+  // @@protoc_insertion_point(serialize_to_array_end:Proto.ProfilingShortItem)
   return target;
 }
 
-int AverageCounter::ByteSize() const {
+int ProfilingShortItem::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
@@ -870,23 +369,13 @@ int AverageCounter::ByteSize() const {
           this->key());
     }
 
-    // required double minute = 2;
-    if (has_minute()) {
+    // required double shortValue = 2;
+    if (has_shortvalue()) {
       total_size += 1 + 8;
     }
 
-    // required double hour = 3;
-    if (has_hour()) {
-      total_size += 1 + 8;
-    }
-
-    // required double day = 4;
-    if (has_day()) {
-      total_size += 1 + 8;
-    }
-
-    // required double total = 5;
-    if (has_total()) {
+    // required double shortAverage = 3;
+    if (has_shortaverage()) {
       total_size += 1 + 8;
     }
 
@@ -902,10 +391,10 @@ int AverageCounter::ByteSize() const {
   return total_size;
 }
 
-void AverageCounter::MergeFrom(const ::google::protobuf::Message& from) {
+void ProfilingShortItem::MergeFrom(const ::google::protobuf::Message& from) {
   GOOGLE_CHECK_NE(&from, this);
-  const AverageCounter* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const AverageCounter*>(
+  const ProfilingShortItem* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const ProfilingShortItem*>(
       &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
@@ -914,64 +403,56 @@ void AverageCounter::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void AverageCounter::MergeFrom(const AverageCounter& from) {
+void ProfilingShortItem::MergeFrom(const ProfilingShortItem& from) {
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_key()) {
       set_key(from.key());
     }
-    if (from.has_minute()) {
-      set_minute(from.minute());
+    if (from.has_shortvalue()) {
+      set_shortvalue(from.shortvalue());
     }
-    if (from.has_hour()) {
-      set_hour(from.hour());
-    }
-    if (from.has_day()) {
-      set_day(from.day());
-    }
-    if (from.has_total()) {
-      set_total(from.total());
+    if (from.has_shortaverage()) {
+      set_shortaverage(from.shortaverage());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
-void AverageCounter::CopyFrom(const ::google::protobuf::Message& from) {
+void ProfilingShortItem::CopyFrom(const ::google::protobuf::Message& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void AverageCounter::CopyFrom(const AverageCounter& from) {
+void ProfilingShortItem::CopyFrom(const ProfilingShortItem& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool AverageCounter::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000001f) != 0x0000001f) return false;
+bool ProfilingShortItem::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
 
   return true;
 }
 
-void AverageCounter::Swap(AverageCounter* other) {
+void ProfilingShortItem::Swap(ProfilingShortItem* other) {
   if (other != this) {
     std::swap(key_, other->key_);
-    std::swap(minute_, other->minute_);
-    std::swap(hour_, other->hour_);
-    std::swap(day_, other->day_);
-    std::swap(total_, other->total_);
+    std::swap(shortvalue_, other->shortvalue_);
+    std::swap(shortaverage_, other->shortaverage_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
   }
 }
 
-::google::protobuf::Metadata AverageCounter::GetMetadata() const {
+::google::protobuf::Metadata ProfilingShortItem::GetMetadata() const {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
-  metadata.descriptor = AverageCounter_descriptor_;
-  metadata.reflection = AverageCounter_reflection_;
+  metadata.descriptor = ProfilingShortItem_descriptor_;
+  metadata.reflection = ProfilingShortItem_reflection_;
   return metadata;
 }
 
@@ -979,130 +460,114 @@ void AverageCounter::Swap(AverageCounter* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int ProfilingEvent::kSourceFieldNumber;
-const int ProfilingEvent::kTicksFieldNumber;
-const int ProfilingEvent::kAveragesFieldNumber;
+const int ProfilingShortEvent::kNameFieldNumber;
+const int ProfilingShortEvent::kItemsFieldNumber;
 #endif  // !_MSC_VER
 
-ProfilingEvent::ProfilingEvent()
+ProfilingShortEvent::ProfilingShortEvent()
   : ::google::protobuf::Message() {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:Proto.ProfilingEvent)
+  // @@protoc_insertion_point(constructor:Proto.ProfilingShortEvent)
 }
 
-void ProfilingEvent::InitAsDefaultInstance() {
+void ProfilingShortEvent::InitAsDefaultInstance() {
 }
 
-ProfilingEvent::ProfilingEvent(const ProfilingEvent& from)
+ProfilingShortEvent::ProfilingShortEvent(const ProfilingShortEvent& from)
   : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:Proto.ProfilingEvent)
+  // @@protoc_insertion_point(copy_constructor:Proto.ProfilingShortEvent)
 }
 
-void ProfilingEvent::SharedCtor() {
+void ProfilingShortEvent::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  source_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
-ProfilingEvent::~ProfilingEvent() {
-  // @@protoc_insertion_point(destructor:Proto.ProfilingEvent)
+ProfilingShortEvent::~ProfilingShortEvent() {
+  // @@protoc_insertion_point(destructor:Proto.ProfilingShortEvent)
   SharedDtor();
 }
 
-void ProfilingEvent::SharedDtor() {
-  if (source_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete source_;
+void ProfilingShortEvent::SharedDtor() {
+  if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete name_;
   }
   if (this != default_instance_) {
   }
 }
 
-void ProfilingEvent::SetCachedSize(int size) const {
+void ProfilingShortEvent::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* ProfilingEvent::descriptor() {
+const ::google::protobuf::Descriptor* ProfilingShortEvent::descriptor() {
   protobuf_AssignDescriptorsOnce();
-  return ProfilingEvent_descriptor_;
+  return ProfilingShortEvent_descriptor_;
 }
 
-const ProfilingEvent& ProfilingEvent::default_instance() {
+const ProfilingShortEvent& ProfilingShortEvent::default_instance() {
   if (default_instance_ == NULL) protobuf_AddDesc_ProfilingEvent_2eproto();
   return *default_instance_;
 }
 
-ProfilingEvent* ProfilingEvent::default_instance_ = NULL;
+ProfilingShortEvent* ProfilingShortEvent::default_instance_ = NULL;
 
-ProfilingEvent* ProfilingEvent::New() const {
-  return new ProfilingEvent;
+ProfilingShortEvent* ProfilingShortEvent::New() const {
+  return new ProfilingShortEvent;
 }
 
-void ProfilingEvent::Clear() {
-  if (has_source()) {
-    if (source_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-      source_->clear();
+void ProfilingShortEvent::Clear() {
+  if (has_name()) {
+    if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+      name_->clear();
     }
   }
-  ticks_.Clear();
-  averages_.Clear();
+  items_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
 
-bool ProfilingEvent::MergePartialFromCodedStream(
+bool ProfilingShortEvent::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Proto.ProfilingEvent)
+  // @@protoc_insertion_point(parse_start:Proto.ProfilingShortEvent)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string source = 1;
+      // required string name = 1;
       case 1: {
         if (tag == 10) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_source()));
+                input, this->mutable_name()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->source().data(), this->source().length(),
+            this->name().data(), this->name().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "source");
+            "name");
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_ticks;
+        if (input->ExpectTag(18)) goto parse_items;
         break;
       }
 
-      // repeated .Proto.TickCounter ticks = 2;
+      // repeated .Proto.ProfilingShortItem items = 2;
       case 2: {
         if (tag == 18) {
-         parse_ticks:
+         parse_items:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_ticks()));
+                input, add_items()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_ticks;
-        if (input->ExpectTag(26)) goto parse_averages;
-        break;
-      }
-
-      // repeated .Proto.AverageCounter averages = 3;
-      case 3: {
-        if (tag == 26) {
-         parse_averages:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_averages()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(26)) goto parse_averages;
+        if (input->ExpectTag(18)) goto parse_items;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1121,108 +586,87 @@ bool ProfilingEvent::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:Proto.ProfilingEvent)
+  // @@protoc_insertion_point(parse_success:Proto.ProfilingShortEvent)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:Proto.ProfilingEvent)
+  // @@protoc_insertion_point(parse_failure:Proto.ProfilingShortEvent)
   return false;
 #undef DO_
 }
 
-void ProfilingEvent::SerializeWithCachedSizes(
+void ProfilingShortEvent::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Proto.ProfilingEvent)
-  // required string source = 1;
-  if (has_source()) {
+  // @@protoc_insertion_point(serialize_start:Proto.ProfilingShortEvent)
+  // required string name = 1;
+  if (has_name()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->source().data(), this->source().length(),
+      this->name().data(), this->name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "source");
+      "name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->source(), output);
+      1, this->name(), output);
   }
 
-  // repeated .Proto.TickCounter ticks = 2;
-  for (int i = 0; i < this->ticks_size(); i++) {
+  // repeated .Proto.ProfilingShortItem items = 2;
+  for (int i = 0; i < this->items_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->ticks(i), output);
-  }
-
-  // repeated .Proto.AverageCounter averages = 3;
-  for (int i = 0; i < this->averages_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->averages(i), output);
+      2, this->items(i), output);
   }
 
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:Proto.ProfilingEvent)
+  // @@protoc_insertion_point(serialize_end:Proto.ProfilingShortEvent)
 }
 
-::google::protobuf::uint8* ProfilingEvent::SerializeWithCachedSizesToArray(
+::google::protobuf::uint8* ProfilingShortEvent::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Proto.ProfilingEvent)
-  // required string source = 1;
-  if (has_source()) {
+  // @@protoc_insertion_point(serialize_to_array_start:Proto.ProfilingShortEvent)
+  // required string name = 1;
+  if (has_name()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->source().data(), this->source().length(),
+      this->name().data(), this->name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "source");
+      "name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->source(), target);
+        1, this->name(), target);
   }
 
-  // repeated .Proto.TickCounter ticks = 2;
-  for (int i = 0; i < this->ticks_size(); i++) {
+  // repeated .Proto.ProfilingShortItem items = 2;
+  for (int i = 0; i < this->items_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, this->ticks(i), target);
-  }
-
-  // repeated .Proto.AverageCounter averages = 3;
-  for (int i = 0; i < this->averages_size(); i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->averages(i), target);
+        2, this->items(i), target);
   }
 
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Proto.ProfilingEvent)
+  // @@protoc_insertion_point(serialize_to_array_end:Proto.ProfilingShortEvent)
   return target;
 }
 
-int ProfilingEvent::ByteSize() const {
+int ProfilingShortEvent::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required string source = 1;
-    if (has_source()) {
+    // required string name = 1;
+    if (has_name()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->source());
+          this->name());
     }
 
   }
-  // repeated .Proto.TickCounter ticks = 2;
-  total_size += 1 * this->ticks_size();
-  for (int i = 0; i < this->ticks_size(); i++) {
+  // repeated .Proto.ProfilingShortItem items = 2;
+  total_size += 1 * this->items_size();
+  for (int i = 0; i < this->items_size(); i++) {
     total_size +=
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        this->ticks(i));
-  }
-
-  // repeated .Proto.AverageCounter averages = 3;
-  total_size += 1 * this->averages_size();
-  for (int i = 0; i < this->averages_size(); i++) {
-    total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        this->averages(i));
+        this->items(i));
   }
 
   if (!unknown_fields().empty()) {
@@ -1236,10 +680,10 @@ int ProfilingEvent::ByteSize() const {
   return total_size;
 }
 
-void ProfilingEvent::MergeFrom(const ::google::protobuf::Message& from) {
+void ProfilingShortEvent::MergeFrom(const ::google::protobuf::Message& from) {
   GOOGLE_CHECK_NE(&from, this);
-  const ProfilingEvent* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const ProfilingEvent*>(
+  const ProfilingShortEvent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const ProfilingShortEvent*>(
       &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
@@ -1248,54 +692,51 @@ void ProfilingEvent::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void ProfilingEvent::MergeFrom(const ProfilingEvent& from) {
+void ProfilingShortEvent::MergeFrom(const ProfilingShortEvent& from) {
   GOOGLE_CHECK_NE(&from, this);
-  ticks_.MergeFrom(from.ticks_);
-  averages_.MergeFrom(from.averages_);
+  items_.MergeFrom(from.items_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_source()) {
-      set_source(from.source());
+    if (from.has_name()) {
+      set_name(from.name());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
-void ProfilingEvent::CopyFrom(const ::google::protobuf::Message& from) {
+void ProfilingShortEvent::CopyFrom(const ::google::protobuf::Message& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void ProfilingEvent::CopyFrom(const ProfilingEvent& from) {
+void ProfilingShortEvent::CopyFrom(const ProfilingShortEvent& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool ProfilingEvent::IsInitialized() const {
+bool ProfilingShortEvent::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
 
-  if (!::google::protobuf::internal::AllAreInitialized(this->ticks())) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->averages())) return false;
+  if (!::google::protobuf::internal::AllAreInitialized(this->items())) return false;
   return true;
 }
 
-void ProfilingEvent::Swap(ProfilingEvent* other) {
+void ProfilingShortEvent::Swap(ProfilingShortEvent* other) {
   if (other != this) {
-    std::swap(source_, other->source_);
-    ticks_.Swap(&other->ticks_);
-    averages_.Swap(&other->averages_);
+    std::swap(name_, other->name_);
+    items_.Swap(&other->items_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
   }
 }
 
-::google::protobuf::Metadata ProfilingEvent::GetMetadata() const {
+::google::protobuf::Metadata ProfilingShortEvent::GetMetadata() const {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
-  metadata.descriptor = ProfilingEvent_descriptor_;
-  metadata.reflection = ProfilingEvent_reflection_;
+  metadata.descriptor = ProfilingShortEvent_descriptor_;
+  metadata.reflection = ProfilingShortEvent_reflection_;
   return metadata;
 }
 

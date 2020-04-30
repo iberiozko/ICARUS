@@ -21,6 +21,7 @@ SOURCES += \
         Config/heartbeat.cpp \
         Config/housekeeper.cpp \
         Config/loggingoptions.cpp \
+        Config/profiling.cpp \
         Config/validators.cpp \
         Config/workercfg.cpp \
         GUI/guiworker.cpp \
@@ -28,6 +29,7 @@ SOURCES += \
         Heartbeat/heartbeatworker.cpp \
         Housekeeper/housekeeperworker.cpp \
         Profiler/profiler.cpp \
+        Profiler/profilingworker.cpp \
         Proto/ConsoleEvent/ConsoleEvent.pb.cc \
         Proto/ConsoleEvent/consoleevent.cpp \
         Proto/HeartbeatEvent/HeartbeatEvent.pb.cc \
@@ -40,7 +42,8 @@ SOURCES += \
         supervisor.cpp \
         worker.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += \
+    QML/Builtin.qrc
 
 TRANSLATIONS += \
     ICARUS_ru_RU.ts
@@ -65,6 +68,7 @@ HEADERS += \
     Config/heartbeat.h \
     Config/housekeeper.h \
     Config/loggingoptions.h \
+    Config/profiling.h \
     Config/validators.h \
     Config/workercfg.h \
     GUI/guiworker.h \
@@ -72,12 +76,14 @@ HEADERS += \
     Heartbeat/heartbeatworker.h \
     Housekeeper/housekeeperworker.h \
     Profiler/profiler.h \
+    Profiler/profilingworker.h \
     Proto/ConsoleEvent/ConsoleEvent.pb.h \
     Proto/ConsoleEvent/consoleevent.h \
     Proto/HeartbeatEvent/HeartbeatEvent.pb.h \
     Proto/HeartbeatEvent/heartbeatevent.h \
     Proto/ProfilingEvent/ProfilingEvent.pb.h \
     Proto/ProfilingEvent/profilingevent.h \
+    cppzmq/zmq.hpp \
     loguru/loguru.hpp \
     options.h \
     rapidjson/include/rapidjson/document.h \
@@ -89,3 +95,10 @@ DISTFILES += \
     Proto/Heartbeat/HeartbeatEvent.proto \
     Proto/HeartbeatEvent/HeartbeatEvent.proto \
     Proto/ProfilingEvent/ProfilingEvent.proto
+
+unix:!macx: LIBS += -L$$PWD/build-libzmq-Desktop_Qt_5_14_1_GCC_64bit-Debug/lib/ -lzmq
+
+INCLUDEPATH += $$PWD/libzmq/include
+DEPENDPATH += $$PWD/libzmq/include
+
+unix:!macx: PRE_TARGETDEPS += $$PWD/build-libzmq-Desktop_Qt_5_14_1_GCC_64bit-Debug/lib/libzmq.a

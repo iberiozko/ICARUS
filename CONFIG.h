@@ -1,6 +1,7 @@
 #pragma once
 #ifndef CONFIG_H
 #define CONFIG_H
+#include <string>
 
 // Настройки ширины столбцов - только на стадии компиляции
 #define LOGURU_FILENAME_WIDTH 24
@@ -18,7 +19,9 @@ const int JSON_ERROR_CONTEXT_LENGTH = 50;
 
 // Интервал профилирования, и сброса накопленной статистики, в секундах
 #define PROFILING_ENABLED
-const double PROFILING_INTERVAL = 60.0;
-const double PROFILING_FLUSH_INTERVAL = 10.0;
+const std::string PROFILING_ZMQ_SOCKET = "ipc://profiling"; //"inproc://profiling"; почему-то не работает, там баг!
+const int PROFILING_ZMQ_THREADS = 1;
+const int PROFILING_ZMQ_MAX_SOCKETS = 10;
+const double PROFILING_SHORT_INTERVAL = 5.0; // Короткий интервал аггрегации профилирования
 
 #endif // CONFIG_H

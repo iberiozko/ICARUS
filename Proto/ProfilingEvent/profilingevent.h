@@ -7,9 +7,9 @@
 namespace ICARUS {
 namespace Msg {
 
-class ProfilingEvent : public Proto::ProfilingEvent {
+class ProfilingShortEvent : public Proto::ProfilingShortEvent {
 public:
-
+    ProfilingShortEvent(const std::map<std::string, double> &ticks, const std::string &name, const double delta);
 };
 
 } // namespace Msg

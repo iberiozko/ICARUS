@@ -45,6 +45,7 @@ private:
     QQmlApplicationEngine *engine;
     QQmlContext *rootContext;
     GUI::Logger *qmlLogger;
+    QVariant qmlConfig;
     QTimer *workingTimer;
 };
 

@@ -7,21 +7,40 @@ namespace Config {
 
 bool LoggingOptions::parseJsonValue(rapidjson::Value doc) {
     bool result = true;
-    result = validateInt(stderrVerbosity, doc, "loggingOptions.", "stderrVerbosity", false, -2, 9) && result;
+    result = validateInt(stderrVerbosity,   doc, "loggingOptions.", "stderrVerbosity", false, -2, 9) && result;
     result = validateBool(colorLogToStderr, doc, "loggingOptions.", "colorLogToStderr", false) && result;
-    result = validateInt(flushIntervalMs, doc, "loggingOptions", "flushIntervalMs", false, 0, 1000) && result;
-    result = validateBool(preambleHeader, doc, "loggingOptions.", "preambleHeader", false) && result;
-    result = validateBool(preamble, doc, "loggingOptions.", "preamble", false) && result;
-    result = validateBool(preambleDate, doc, "loggingOptions.", "preambleDate", false) && result;
-    result = validateBool(preambleTime, doc, "loggingOptions.", "preambleTime", false) && result;
-    result = validateBool(preambleUptime, doc, "loggingOptions.", "preambleUptime", false) && result;
-    result = validateBool(preambleThread, doc, "loggingOptions.", "preambleThread", false) && result;
-    result = validateBool(preambleFile, doc, "loggingOptions.", "preambleFile", false) && result;
-    result = validateBool(preambleVerbose, doc, "loggingOptions.", "preambleVerbose", false) && result;
-    result = validateBool(preamblePipe, doc, "loggingOptions.", "preamblePipe", false) && result;
-    result = validateInt(fileVerbosity, doc, "loggingOptions", "fileVerbosity", false, -2, 9) && result;
-    result = validateString(filePath, doc, "loggingOptions.", "filePath", false) && result;
+    result = validateInt(flushIntervalMs,   doc, "loggingOptions", "flushIntervalMs", false, 0, 1000) && result;
+    result = validateBool(preambleHeader,   doc, "loggingOptions.", "preambleHeader", false) && result;
+    result = validateBool(preamble,         doc, "loggingOptions.", "preamble", false) && result;
+    result = validateBool(preambleDate,     doc, "loggingOptions.", "preambleDate", false) && result;
+    result = validateBool(preambleTime,     doc, "loggingOptions.", "preambleTime", false) && result;
+    result = validateBool(preambleUptime,   doc, "loggingOptions.", "preambleUptime", false) && result;
+    result = validateBool(preambleThread,   doc, "loggingOptions.", "preambleThread", false) && result;
+    result = validateBool(preambleFile,     doc, "loggingOptions.", "preambleFile", false) && result;
+    result = validateBool(preambleVerbose,  doc, "loggingOptions.", "preambleVerbose", false) && result;
+    result = validateBool(preamblePipe,     doc, "loggingOptions.", "preamblePipe", false) && result;
+    result = validateInt(fileVerbosity,     doc, "loggingOptions", "fileVerbosity", false, -2, 9) && result;
+    result = validateString(filePath,       doc, "loggingOptions.", "filePath", false) && result;
     return result;
+}
+
+QVariant LoggingOptions::toVariant() {
+    QVariantMap map;
+    map.insert("stderrVerbosity", stderrVerbosity);
+    map.insert("colorLogToStderr", colorLogToStderr);
+    map.insert("flushIntervalMs", flushIntervalMs);
+    map.insert("preambleHeader", preambleHeader);
+    map.insert("preamble", preamble);
+    map.insert("preambleDate", preambleDate);
+    map.insert("preambleTime", preambleTime);
+    map.insert("preambleUptime", preambleUptime);
+    map.insert("preambleThread", preambleThread);
+    map.insert("preambleFile", preambleFile);
+    map.insert("preambleVerbose", preambleVerbose);
+    map.insert("preamblePipe", preamblePipe);
+    map.insert("fileVerbosity", fileVerbosity);
+    map.insert("filePath", QString(filePath.c_str()));
+    return QVariant(map);
 }
 
 void LoggingOptions::configureLogging() {

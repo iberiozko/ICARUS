@@ -1,6 +1,6 @@
 #pragma once
-#ifndef HEARTBEAT_H
-#define HEARTBEAT_H
+#ifndef HEARTBEATEVENT_H
+#define HEARTBEATEVENT_H
 #include "../../CONFIG.h"
 #include <QVariant>
 #include "../../Config/configuration.h"
@@ -16,4 +16,4 @@ public:
 
 } // namespace Msg
 } // namespace ICARUS
-#endif // HEARTBEAT_H
+#endif // HEARTBEATEVENT_H

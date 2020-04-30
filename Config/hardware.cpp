@@ -9,6 +9,16 @@
 namespace ICARUS {
 namespace Config {
 
+QVariant Hardware::toVariant() {
+    QVariantMap map;
+    map.insert("sysname", QString(sysname.c_str()));
+    map.insert("nodename", QString(nodename.c_str()));
+    map.insert("release", QString(release.c_str()));
+    map.insert("version", QString(version.c_str()));
+    map.insert("machine", QString(machine.c_str()));
+    return QVariant(map);
+}
+
 void Hardware::collectHardware() {
 #ifdef __linux__
     // На линухе берем из UTS

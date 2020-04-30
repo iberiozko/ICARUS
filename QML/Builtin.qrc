@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Testmode/Testmode.qml</file>
+        <file>Testmode/Crosshair.qml</file>
+    </qresource>
+    <qresource prefix="/new/prefix1"/>
+</RCC>

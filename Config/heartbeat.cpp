@@ -12,5 +12,12 @@ bool Heartbeat::parseJsonValue(rapidjson::Value doc) {
     return result;
 }
 
+QVariant Heartbeat::toVariant() {
+    QVariantMap map;
+    map.insert("enabled", enabled);
+    map.insert("workerCfg", workerCfg.toVariant());
+    return QVariant(map);
+}
+
 } // namespace Config
 } // namespace ICARUS

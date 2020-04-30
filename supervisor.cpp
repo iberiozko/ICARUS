@@ -16,6 +16,7 @@ void Supervisor::supervise() {
     LOG_F(INFO, "Entering working thread...");
 
     // Это наши работники, они живут имено в этом контексте
+    ProfilingWorker profilingWorker(config, config.profiling); if (config.profiling.enabled) { profilingWorker.Run(); }
     HeartbeatWorker heartbeatWorker(config, config.heartbeat); if (config.heartbeat.enabled) { heartbeatWorker.Run(); }
     HousekeeperWorker housekeeperWorker(config, config.housekeeper); if (config.housekeeper.enabled) { housekeeperWorker.Run(); }
 

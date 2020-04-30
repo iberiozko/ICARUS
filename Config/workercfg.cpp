@@ -15,5 +15,16 @@ bool WorkerCfg::parseJsonValue(rapidjson::Value doc) {
     return result;
 }
 
+QVariant WorkerCfg::toVariant() {
+    QVariantMap map;
+    map.insert("hz", hz);
+    map.insert("maxInitializeRetries", maxInitializeRetries);
+    map.insert("maxFinalizeRetries", maxFinalizeRetries);
+    map.insert("maxProcessRetries", maxProcessRetries);
+    map.insert("testMode", testMode);
+    map.insert("name", QString(name.c_str()));
+    return QVariant(map);
+}
+
 } // namespace Config
 } // namespace ICARUS
